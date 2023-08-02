@@ -41,7 +41,7 @@ class PostController extends Controller
             'body' => $request->body,
         ]);
 
-        return redirect()->route('post.index')->with('success_message', 'Post created successfully!');
+        return redirect('/')->with('success_message', 'Post created successfully!');
     }
 
     /**
@@ -79,7 +79,7 @@ class PostController extends Controller
             'body' => $request->body,
         ]);
 
-        return redirect()->route('post.show', $post)->with('success_message', 'Post updated successfully!');
+        return redirect('/posts/'.$post->id)->with('success_message', 'Post updated successfully!');
     }
 
     /**
